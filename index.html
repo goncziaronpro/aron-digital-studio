@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARON DIGITAL STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070914;--panel:#10182c;--text:#f4f7ff;--muted:#9aa7c2;--cyan:#35ddff;--purple:#9b5cff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:#070914ed;border-bottom:1px solid #26324b;padding:20px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 20px Orbitron;color:var(--cyan)}
+.logo span{color:var(--purple)}
+nav{display:flex;gap:24px;align-items:center}
+nav a,.lang{font-size:12px;color:#c1cbe0}
+.lang{background:#102139;border:1px solid var(--cyan);padding:9px 13px;color:var(--cyan);cursor:pointer}
+.wrap{width:min(1100px,90%);margin:auto}
+.hero{min-height:650px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
+.eyebrow{font:700 10px Orbitron;letter-spacing:3px;color:var(--cyan)}
+h1{font:800 clamp(38px,6vw,68px)/1.2 Orbitron;letter-spacing:-2px}
+.gradient{background:linear-gradient(100deg,var(--cyan),#9b83ff,var(--purple));color:transparent;background-clip:text}
+p{color:var(--muted);line-height:1.8}
+.btn{display:inline-block;padding:14px 19px;background:linear-gradient(100deg,var(--cyan),#9b83ff);color:#07101b;border-radius:5px;font-size:12px;font-weight:800;margin:8px 8px 0 0}
+.btn.alt{background:transparent;border:1px solid #657aab;color:var(--text)}
+.art{height:370px;display:grid;place-items:center;position:relative}
+.core{width:190px;height:190px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,#1b4773,#10152d 65%,#090b19);border:1px solid var(--cyan);box-shadow:0 0 50px #24caff55;font:800 28px Orbitron}
+.orbit{position:absolute;width:340px;height:170px;border:1px solid #5b9dff77;border-radius:50%;transform:rotate(-25deg)}
+.orbit.two{width:270px;height:330px;transform:rotate(50deg);border-color:#a36bff77}
+.tag{position:absolute;background:#101a31;border:1px solid #5c8fe7;padding:10px;color:var(--cyan);font:10px Orbitron}
+.tag.a{top:30px;right:5px}.tag.b{bottom:35px;left:0}
+section{padding:90px 0}
+.heading{font:800 clamp(26px,4vw,42px) Orbitron;margin:16px 0 35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{padding:25px;background:linear-gradient(145deg,#10182c,#0b1020);border:1px solid #26324b;border-radius:8px;transition:.2s}
+.card:hover{transform:translateY(-5px);border-color:var(--cyan)}
+.card h3{font-size:17px}
+.card p{font-size:12px}
+.icon{font-size:25px;color:var(--cyan)}
+.work{background:#0b1020;border-top:1px solid #26324b;border-bottom:1px solid #26324b}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{padding:45px 20px;text-align:center;border:1px solid #34405c;border-radius:8px;background:radial-gradient(circle,#263b69,#10152b);font:800 24px Orbitron;color:var(--cyan)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-art{min-height:260px;display:grid;place-items:center;border:1px solid #26324b;background:radial-gradient(circle,#15264b,#080c1a);font:700 24px Orbitron;text-align:center;color:var(--cyan)}
+.contact{background:linear-gradient(105deg,#101b35,#20123b);border-top:1px solid #5e85c6;padding:75px 0}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+form{background:#0b1020;padding:25px;border:1px solid #34405c;border-radius:8px}
+label{display:block;font-size:12px;color:#cbd7ee;margin:15px 0}
+input,select,textarea{display:block;width:100%;margin-top:8px;padding:12px;background:#10182c;border:1px solid #34405c;color:white;border-radius:4px;font:14px Inter}
+button{cursor:pointer;border:0}
+footer{padding:28px 6%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#8c9ab5;font-size:11px}
+@media(max-width:750px){header{align-items:flex-start;gap:15px;flex-wrap:wrap}nav{gap:13px;flex-wrap:wrap}.hero,.about,.contact-layout{grid-template-columns:1fr}.hero{padding:70px 0}.art{height:300px}.grid{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.heading{font-size:27px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}nav{width:100%}.hero{min-height:auto}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#home">A<span>/</span>DS</a>
+<nav>
+<a href="#services" data-hu="Szolgáltatások" data-en="Services">Szolgáltatások</a>
+<a href="#work" data-hu="Munkáink" data-en="Our Work">Munkáink</a>
+<a href="#about" data-hu="Rólunk" data-en="About">Rólunk</a>
+<a href="#contact" data-hu="Kapcsolat" data-en="Contact">Kapcsolat</a>
+<button class="lang" id="lang">EN</button>
+</nav>
+</header>
+<main>
+<div class="wrap hero" id="home">
+<div>
+<div class="eyebrow">DIGITÁLIS KREATÍV STÚDIÓ</div>
+<h1><span data-hu="ÖTLETEKBŐL" data-en="IDEAS INTO">ÖTLETEKBŐL</span><br><span class="gradient" data-hu="DIGITÁLIS ÉLMÉNYEK." data-en="DIGITAL EXPERIENCES.">DIGITÁLIS ÉLMÉNYEK.</span></h1>
+<p data-hu="Videó, design, web és kreatív megoldások — minden, ami életre kelti az elképzeléseidet." data-en="Video, design, web and creative solutions — everything that brings your ideas to life.">Videó, design, web és kreatív megoldások — minden, ami életre kelti az elképzeléseidet.</p>
+<a class="btn" href="#services" data-hu="Fedezd fel a szolgáltatásokat" data-en="Explore our services">Fedezd fel a szolgáltatásokat</a>
+<a class="btn alt" href="#contact" data-hu="Projekt indítása" data-en="Start a project">Projekt indítása</a>
+</div>
+<div class="art"><div class="orbit"></div><div class="orbit two"></div><div class="core">ARON<br>DIGITAL</div><div class="tag a">CREATIVE STUDIO</div><div class="tag b">IDEAS → IMPACT</div></div>
+</div>
+<section class="wrap" id="services">
+<div class="eyebrow">WHAT WE DO</div>
+<h2 class="heading" data-hu="A TE ÖTLETED. A MI KREATÍV ERŐNK." data-en="YOUR IDEA. OUR CREATIVE POWER.">A TE ÖTLETED. A MI KREATÍV ERŐNK.</h2>
+<div class="grid">
+<div class="card"><div class="icon">▶</div><h3 data-hu="Videóvágás" data-en="Video Editing">Videóvágás</h3><p data-hu="YouTube-videók, Shorts, Reels, reklámok és dinamikus videós tartalmak." data-en="YouTube videos, Shorts, Reels, ads and dynamic video content.">YouTube-videók, Shorts, Reels, reklámok és dinamikus videós tartalmak.</p></div>
+<div class="card"><div class="icon">⌘</div><h3 data-hu="Weboldalkészítés" data-en="Web Development">Weboldalkészítés</h3><p data-hu="Modern, reszponzív weboldalak, landing page-ek és digitális portfóliók." data-en="Modern, responsive websites, landing pages and digital portfolios.">Modern, reszponzív weboldalak, landing page-ek és digitális portfóliók.</p></div>
+<div class="card"><div class="icon">✦</div><h3 data-hu="Grafikai tervezés" data-en="Graphic Design">Grafikai tervezés</h3><p data-hu="Logók, plakátok, bannerek és egységes vizuális megjelenés." data-en="Logos, posters, banners and consistent visual identities.">Logók, plakátok, bannerek és egységes vizuális megjelenés.</p></div>
+<div class="card"><div class="icon">◎</div><h3>Social Media</h3><p data-hu="Platformokra szabott kreatív tartalmak, posztok és vizuális csomagok." data-en="Platform-ready creative content, posts and visual content packs.">Platformokra szabott kreatív tartalmak, posztok és vizuális csomagok.</p></div>
+<div class="card"><div class="icon">↗</div><h3>Marketing</h3><p data-hu="Kampányötletek, digitális reklámkreatívok és promóciós anyagok." data-en="Campaign concepts, digital ad creatives and promotional materials.">Kampányötletek, digitális reklámkreatívok és promóciós anyagok.</p></div>
+<div class="card"><div class="icon">♫</div><h3 data-hu="Hangvágás" data-en="Audio Editing">Hangvágás</h3><p data-hu="Podcastok, hanganyagok, tisztítás, vágás és audio-utómunka." data-en="Podcasts, audio cleanup, editing and post-production.">Podcastok, hanganyagok, tisztítás, vágás és audio-utómunka.</p></div>
+<div class="card"><div class="icon">▤</div><h3 data-hu="Prezentációk" data-en="Presentations">Prezentációk</h3><p data-hu="Látványos bemutatók, pitch deckek és jól felépített prezentációk." data-en="Engaging presentations, pitch decks and polished slide decks.">Látványos bemutatók, pitch deckek és jól felépített prezentációk.</p></div>
+</div>
+</section>
+<section class="work" id="work">
+<div class="wrap">
+<div class="eyebrow">SELECTED PROJECTS</div>
+<h2 class="heading" data-hu="SAJÁT PROJEKTJEINK" data-en="OUR PROJECTS">SAJÁT PROJEKTJEINK</h2>
+<div class="projects">
+<div class="project">✦<br>ARONVERSE</div>
+<div class="project">◈<br>ARONPRO<br>GAMINGX</div>
+</div>
+<p data-hu="A portfólióban jelenleg két saját projektünk szerepel." data-en="Our portfolio currently features two original projects.">A portfólióban jelenleg két saját projektünk szerepel.</p>
+</div>
+</section>
+<section class="wrap about" id="about">
+<div class="about-art">IDEAS<br>INTO<br><span class="gradient">IMPACT</span></div>
+<div><div class="eyebrow">WHO WE ARE</div><h2 class="heading" data-hu="KREATÍV GONDOLKODÁS. DIGITÁLIS MEGVALÓSÍTÁS." data-en="CREATIVE THINKING. DIGITAL EXECUTION.">KREATÍV GONDOLKODÁS. DIGITÁLIS MEGVALÓSÍTÁS.</h2><p data-hu="Az ARON DIGITAL STUDIO egy kreatív digitális stúdió, ahol különböző ötletekből készülnek látványos online és médiatartalmak. A célunk egyszerű: minőségi, átgondolt és egyedi megoldásokat alkotni." data-en="ARON DIGITAL STUDIO is a creative digital studio turning ideas into engaging online experiences and media content. Our goal is to create thoughtful, distinctive and quality solutions.">Az ARON DIGITAL STUDIO egy kreatív digitális stúdió, ahol különböző ötletekből készülnek látványos online és médiatartalmak. A célunk egyszerű: minőségi, átgondolt és egyedi megoldásokat alkotni.</p></div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap contact-layout">
+<div><div class="eyebrow">THE NEXT STEP</div><h2 class="heading" data-hu="VAN EGY ÖTLETED? HOZZUK LÉTRE!" data-en="HAVE AN IDEA? LET'S MAKE IT HAPPEN!">VAN EGY ÖTLETED? HOZZUK LÉTRE!</h2><p data-hu="Kérj ajánlatot az online űrlapon, vagy írj nekünk e-mailt." data-en="Request a quote using the form or send us an email.">Kérj ajánlatot az online űrlapon, vagy írj nekünk e-mailt.</p><a class="btn alt" href="mailto:hello@arondigitalstudio.com">✉ E-mail küldése</a></div>
+<form id="contactForm">
+<h3 data-hu="AJÁNLATKÉRÉS" data-en="REQUEST A QUOTE">AJÁNLATKÉRÉS</h3>
+<label data-hu="Neved" data-en="Your name">Neved<input name="name" required></label>
+<label>E-mail<input type="email" name="email" required></label>
+<label data-hu="Miben segíthetünk?" data-en="What do you need?">Miben segíthetünk?
+<select name="service" required><option value="">Válassz szolgáltatást</option><option>Videóvágás</option><option>Weboldalkészítés</option><option>Grafikai tervezés</option><option>Social media</option><option>Marketing</option><option>Hangvágás</option><option>Prezentáció</option><option>Egyéb</option></select></label>
+<label data-hu="Projekt rövid leírása" data-en="Describe your project">Projekt rövid leírása<textarea name="message" rows="4" required></textarea></label>
+<button class="btn" type="submit" data-hu="Ajánlatkérés e-mailben ↗" data-en="Send request by email ↗">Ajánlatkérés e-mailben ↗</button>
+<p style="font-size:10px" data-hu="Az űrlap az e-mail alkalmazásodat nyitja meg az előre kitöltött üzenettel." data-en="The form opens your email app with a pre-filled message.">Az űrlap az e-mail alkalmazásodat nyitja meg az előre kitöltött üzenettel.</p>
+</form>
+</div>
+</section>
+</main>
+<footer><span class="logo">A<span>/</span>DS</span><span>© <span id="year"></span> ARON DIGITAL STUDIO</span><a href="#home">↑ Vissza a tetejére</a></footer>
+<script>
+const CONTACT_EMAIL="hello@arondigitalstudio.com";
+document.getElementById("year").textContent=new Date().getFullYear();
+let language="hu";
+document.getElementById("lang").addEventListener("click",()=>{
+ language=language==="hu"?"en":"hu";
+ document.documentElement.lang=language;
+ document.querySelectorAll("[data-hu]").forEach(el=>el.textContent=el.dataset[language]);
+ document.getElementById("lang").textContent=language==="hu"?"EN":"HU";
+});
+document.getElementById("contactForm").addEventListener("submit",event=>{
+ event.preventDefault();
+ const data=new FormData(event.target);
+ const subject=encodeURIComponent("ARON DIGITAL STUDIO — "+data.get("service"));
+ const body=encodeURIComponent("Név: "+data.get("name")+"\nE-mail: "+data.get("email")+"\nSzolgáltatás: "+data.get("service")+"\nProjekt: "+data.get("message"));
+ window.location.href="mailto:"+CONTACT_EMAIL+"?subject="+subject+"&body="+body;
+});
+</script>
+</body>
+</html>
