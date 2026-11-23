@@ -6,6 +6,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARON DIGITAL STUDIO</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+.success-message {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  margin-top: 24px;
+  padding: 30px 22px;
+  border: 1px solid #35ddff;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at top, #193c65 0%, transparent 65%),
+    linear-gradient(135deg, #080e20, #21113d);
+  box-shadow:
+    0 0 15px #35ddff66,
+    0 0 40px #9b5cff33,
+    inset 0 0 25px #35ddff15;
+  text-align: center;
+  animation: aronGlow 2s infinite alternate;
+}
+
+.success-message.show {
+  display: block;
+  animation: aronAppear .6s ease, aronGlow 2s infinite alternate;
+}
+
+.success-message h3 {
+  color: #35ddff;
+  font-family: Orbitron, sans-serif;
+  font-size: 21px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px #35ddff;
+  margin-bottom: 16px;
+}
+
+.success-message p {
+  color: #e2eaff;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.success-message strong {
+  display: inline-block;
+  margin-top: 12px;
+  color: #c58aff;
+  font-family: Orbitron, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px #9b5cff;
+}
+
+@keyframes aronAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes aronGlow {
+  from {
+    box-shadow: 0 0 12px #35ddff44, 0 0 25px #9b5cff22;
+  }
+  to {
+    box-shadow: 0 0 25px #35ddff99, 0 0 45px #9b5cff66;
+  }
+}
+
 <style>
 :root{--bg:#070914;--panel:#10182c;--text:#f4f7ff;--muted:#9aa7c2;--cyan:#35ddff;--purple:#9b5cff}
 *{box-sizing:border-box}
@@ -118,6 +188,15 @@ footer{padding:28px 6%;display:flex;justify-content:space-between;gap:20px;flex-
 <label data-hu="Projekt rövid leírása" data-en="Describe your project">Projekt rövid leírása<textarea name="message" rows="4" required></textarea></label>
 <button class="btn" type="submit" data-hu="Ajánlatkérés e-mailben ↗" data-en="Send request by email ↗">Ajánlatkérés e-mailben ↗</button>
 <p style="font-size:10px" data-hu="Az űrlap az e-mail alkalmazásodat nyitja meg az előre kitöltött üzenettel." data-en="The form opens your email app with a pre-filled message.">Az űrlap az e-mail alkalmazásodat nyitja meg az előre kitöltött üzenettel.</p>
+<div id="successMessage" class="success-message" role="status">
+  <h3>✓ KÉSZEN ÁLL AZ ÜZENETED!</h3>
+  <p>
+    Köszönjük, hogy az ARON DIGITAL STUDIO-t választottad!
+    Megnyitottuk az e-mail alkalmazásodat az ajánlatkéréssel.
+  </p>
+  <p>Kérjük, nyomd meg ott a Küldés gombot!</p>
+  <strong>ARON DIGITAL STUDIO</strong>
+</div>
 </form>
 </div>
 </section>
@@ -134,12 +213,26 @@ document.getElementById("lang").addEventListener("click",()=>{
  document.getElementById("lang").textContent=language==="hu"?"EN":"HU";
 });
 document.getElementById("contactForm").addEventListener("submit",event=>{
- event.preventDefault();
- const data=new FormData(event.target);
- const subject=encodeURIComponent("ARON DIGITAL STUDIO — "+data.get("service"));
- const body=encodeURIComponent("Név: "+data.get("name")+"\nE-mail: "+data.get("email")+"\nSzolgáltatás: "+data.get("service")+"\nProjekt: "+data.get("message"));
- window.location.href="mailto:"+CONTACT_EMAIL+"?subject="+subject+"&body="+body;
+  event.preventDefault();
+  const form=event.target;
+  if(!form.reportValidity()) return;
+
+  const data=new FormData(form);
+  const subject=encodeURIComponent("ARON DIGITAL STUDIO — "+data.get("service"));
+  const body=encodeURIComponent(
+    "Név: "+data.get("name")+
+    "\nE-mail: "+data.get("email")+
+    "\nSzolgáltatás: "+data.get("service")+
+    "\nProjekt: "+data.get("message")
+  );
+
+  document.getElementById("successMessage").classList.add("show");
+
+  window.location.href="mailto:"+CONTACT_EMAIL+"?subject="+subject+"&body="+body;
 });
 </script>
+  from {opacity:0;transform:translateY(10px)}
+  to {opacity:1;transform:translateY(0)}
+}
 </body>
 </html>
