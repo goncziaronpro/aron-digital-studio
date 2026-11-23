@@ -7,59 +7,66 @@
 <title>ARON DIGITAL STUDIO</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
+
+<style>
+
+/* ===== ARON DIGITAL STUDIO - ULTRA NEON SUCCESS ===== */
+
 .success-message {
   display: none;
   position: relative;
   overflow: hidden;
-  margin-top: 24px;
-  padding: 30px 22px;
+  margin-top: 25px;
+  padding: 32px 22px;
   border: 1px solid #35ddff;
-  border-radius: 16px;
+  border-radius: 18px;
   background:
-    radial-gradient(ellipse at top, #193c65 0%, transparent 65%),
-    linear-gradient(135deg, #080e20, #21113d);
+    radial-gradient(circle at 50% 0%, #244e80 0%, transparent 60%),
+    linear-gradient(145deg, #080e20, #17102f, #080e20);
   box-shadow:
-    0 0 15px #35ddff66,
-    0 0 40px #9b5cff33,
-    inset 0 0 25px #35ddff15;
+    0 0 15px #35ddff88,
+    0 0 35px #9b5cff55,
+    inset 0 0 30px #35ddff22;
   text-align: center;
-  animation: aronGlow 2s infinite alternate;
 }
 
 .success-message.show {
   display: block;
-  animation: aronAppear .6s ease, aronGlow 2s infinite alternate;
+  animation: aronEnter .7s ease, aronPulse 2s infinite alternate;
 }
 
 .success-message h3 {
   color: #35ddff;
   font-family: Orbitron, sans-serif;
-  font-size: 21px;
+  font-size: 23px;
+  font-weight: 800;
   letter-spacing: 2px;
-  text-shadow: 0 0 12px #35ddff;
-  margin-bottom: 16px;
+  text-shadow:
+    0 0 8px #35ddff,
+    0 0 22px #35ddff;
+  margin: 0 0 18px;
 }
 
 .success-message p {
-  color: #e2eaff;
-  font-size: 13px;
-  line-height: 1.8;
+  color: #e5edff;
+  font-size: 14px;
+  line-height: 1.9;
 }
 
 .success-message strong {
   display: inline-block;
-  margin-top: 12px;
+  margin-top: 16px;
   color: #c58aff;
   font-family: Orbitron, sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-shadow: 0 0 12px #9b5cff;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #9b5cff;
 }
 
-@keyframes aronAppear {
+@keyframes aronEnter {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(.96);
+    transform: translateY(25px) scale(.92);
   }
   to {
     opacity: 1;
@@ -67,16 +74,15 @@
   }
 }
 
-@keyframes aronGlow {
+@keyframes aronPulse {
   from {
-    box-shadow: 0 0 12px #35ddff44, 0 0 25px #9b5cff22;
+    box-shadow: 0 0 12px #35ddff55, 0 0 25px #9b5cff33;
   }
   to {
-    box-shadow: 0 0 25px #35ddff99, 0 0 45px #9b5cff66;
+    box-shadow: 0 0 28px #35ddffbb, 0 0 55px #9b5cff88;
   }
 }
 
-<style>
 :root{--bg:#070914;--panel:#10182c;--text:#f4f7ff;--muted:#9aa7c2;--cyan:#35ddff;--purple:#9b5cff}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
